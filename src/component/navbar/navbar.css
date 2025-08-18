@@ -1,0 +1,194 @@
+/* Navbar Styles */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* background: rgba(26, 26, 26, 0.95); */
+  backdrop-filter: blur(10px);
+  z-index: 1000;
+  padding: 0;
+  /* border-bottom: 1px solid rgba(255, 255, 255, 0.1); */
+}
+
+.navbar-container {
+  width: 100%;
+  padding: 15px 10% 15px 10%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #e81cff, #40c9ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin: 0;
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  margin: 2px 0;
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  border-radius: 3px;
+  transform-origin: center;
+}
+
+/* Hamburger Animation to X */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+  background: linear-gradient(135deg, #e81cff, #40c9ff);
+}
+
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+  transform: rotate(180deg) scale(0);
+}
+
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+  background: linear-gradient(135deg, #e81cff, #40c9ff);
+}
+
+/* Menu Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile Navigation */
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.mobile-nav-link {
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 20px 40px;
+  width: 200px;
+  text-align: center;
+  margin: 10px 0;
+  border-radius: 10px;
+  transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  transform: translateY(-50px);
+  opacity: 0;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.mobile-nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.mobile-nav-link:hover::before {
+  left: 100%;
+}
+
+.mobile-nav-link:hover {
+  background: linear-gradient(135deg, rgba(232, 28, 255, 0.2), rgba(64, 201, 255, 0.2));
+  border-color: rgba(232, 28, 255, 0.5);
+  transform: translateY(-5px) scale(1.05);
+  color: #40c9ff;
+}
+
+/* Staggered Animation for Links */
+.menu-overlay.active .mobile-nav-link:nth-child(1) {
+  animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.1s forwards;
+}
+
+.menu-overlay.active .mobile-nav-link:nth-child(2) {
+  animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.2s forwards;
+}
+
+.menu-overlay.active .mobile-nav-link:nth-child(3) {
+  animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.3s forwards;
+}
+
+.menu-overlay.active .mobile-nav-link:nth-child(4) {
+  animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s forwards;
+}
+.menu-overlay.active .mobile-nav-link:nth-child(5) {
+  animation: slideInDown 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.5s forwards;
+}
+
+/* Slide in animation */
+@keyframes slideInDown {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Responsive Design */
+@media (min-width: 769px) {
+  .navbar-container {
+    padding: 20px 10% 20px 10%;
+  }
+  
+  .navbar-logo h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Add padding to body to account for fixed navbar */
+body {
+  padding-top: 70px;
+}
+
+/* Prevent scroll when menu is open */
+body.menu-open {
+  overflow: hidden;
+}

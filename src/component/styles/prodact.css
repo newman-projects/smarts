@@ -1,0 +1,142 @@
+.product-container {
+  padding: 4rem 2rem;
+  text-align: center;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.product-container h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  color: var(--heading-color);
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.product-container h1.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.items-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+.item-three {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 270px;
+  min-height: 340px;
+  padding: 1.5rem;
+  background: var(--card-bg-dark);
+  border-radius: 16px;
+  transition: transform 0.3s ease;
+  
+  /* Animation properties */
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.item-three.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered animation delays for each item */
+.item-three:nth-child(1).animate-in {
+  transition-delay: 0.1s;
+}
+
+.item-three:nth-child(2).animate-in {
+  transition-delay: 0.2s;
+}
+
+.item-three:nth-child(3).animate-in {
+  transition-delay: 0.3s;
+}
+
+.item-three:nth-child(4).animate-in {
+  transition-delay: 0.4s;
+}
+
+.item-three img {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 1.5rem;
+  object-fit: contain;
+}
+
+.item-three h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333;
+  text-transform: capitalize;
+}
+
+.item-three p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #666;
+  margin: 0;
+}
+
+/* Hover effect for better interactivity */
+.item-three:hover {
+  transform: translateY(-5px);
+}
+
+/* Responsive design */
+@media (max-width: 1024px) {
+  .product-container {
+    padding: 3rem 1.5rem;
+  }
+  
+  .items-container {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .product-container {
+    padding: 2rem 1rem;
+  }
+  
+  .items-container {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .item-three {
+    max-width: 300px;
+    margin-bottom: 2rem;
+  }
+  
+  .product-container h1 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-container h1 {
+    font-size: 1.8rem;
+  }
+  
+  .item-three h3 {
+    font-size: 1.2rem;
+  }
+}
+

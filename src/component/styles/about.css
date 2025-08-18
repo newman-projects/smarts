@@ -1,0 +1,151 @@
+/* About.css */
+
+.about-container {
+  min-height: 90vh;
+  display: flex;
+  border-radius: 16px;
+  box-shadow: 5px 5px;
+  align-items: center;
+  padding: 2rem 0;
+  background: white;
+}
+
+.content-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  /* max-width: 1200px; */
+  /* margin: 0 auto; */
+  padding: 0 2rem;
+  gap: 10%;
+  justify-content: space-between;
+}
+
+.image-section {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  transform: translateX(-50px);
+  opacity: 0;
+  animation: slideInLeft 1s ease-out 0.5s forwards;
+}
+
+.text-section {
+  width: 50%;
+}
+
+.text {
+  text-align: left;
+}
+
+.text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 2rem;
+  line-height: 1.2;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.text p {
+  font-size: 1.25rem;
+  color: #666;
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+  transform: translateX(100px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Animation states */
+.text h1.animate-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.text p.animate-in {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* Staggered animation delays */
+.text p:nth-child(2).animate-in {
+  transition-delay: 0.2s;
+}
+
+.text p:nth-child(3).animate-in {
+  transition-delay: 0.4s;
+}
+
+/* Image slide-in animation */
+@keyframes slideInLeft {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 1024px) {
+  .content-wrapper {
+    gap: 5%;
+  }
+  
+  .image-section,
+  .text-section {
+    width: 47.5%;
+  }
+}
+
+@media (max-width: 768px) {
+  .content-wrapper {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  .text-section {
+    order: 2;
+    width: 100%;
+  }
+
+  .image-section {
+    order: 1;
+    width: 100%;
+  }
+
+  .text h1 {
+    font-size: 2.5rem;
+    text-align: center;
+  }
+
+  .text p {
+    font-size: 1.1rem;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .text h1 {
+    font-size: 2rem;
+  }
+
+  .about-image {
+    max-width: 300px;
+  }
+
+  .content-wrapper {
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+}
+
