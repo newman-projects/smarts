@@ -37,7 +37,12 @@ export default function Hero() {
                 <h4>info@smartsen.net</h4>
             </div>
             <div className="info" ref={infoRef}>
-                <p>Imagine knowing your muscle development in real time…  monitoring & diagnosis by <br /> <span><img src={musclesen} alt="musclesen" /></span></p>
+                <p>
+                  Imagine knowing your muscle development in real time… monitoring & diagnosis by <br />
+                  <span className="musclesen-wrapper">
+                    <img src={musclesen} alt="musclesen" className="musclesen-logo" />
+                  </span>
+                </p>
             </div>
         </div>
     </div>
