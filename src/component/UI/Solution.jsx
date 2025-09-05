@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react'
 import quantum from '../../assets/quantum.svg'
 import Diagnostics from '../../assets/Diagnostics.svg'
 import magnetically from '../../assets/magnetically.svg'
-import '../styles/solution.css'
+import '../styles/light-section.css'  // Changed from solution.css to business.css
 
 export default function Solution() {
   const titleRef = useRef(null)
@@ -35,36 +35,47 @@ export default function Solution() {
     }
   }, [])
 
+  const solutionItems = [
+    {
+      icon: quantum,
+      title: "Quantum gradiometer sensor",
+      description: "Precisely detects tiny variations in the magnetic field. Monitoring weak neuromuscular currents"
+    },
+    {
+      icon: Diagnostics,
+      title: "Diagnostics",
+      description: "Dedicated algorithms and AI through smartphone and cloud computing"
+    },
+    {
+      icon: magnetically,
+      title: "Magnetically Shielded environment",
+      description: "No need"
+    }
+  ]
+
   return (
-    <div className='solution-container'>
-        <h1 ref={titleRef}>Solution</h1>
-        <h2 ref={subtitleRef}>To assist muscles development in neuromuscular therapy, rehabilitation, and physical training</h2>
-        <div className="items-container">
-            <div 
-              className="item-two"
-              ref={el => itemsRef.current[0] = el}
-            >
-                <img src={quantum} alt="quantum" />
-                <h3>Quantum gradiometer sensor</h3>
-                <p>Precisely detects tiny variations in the magnetic field. <br />Monitoring weak neuromuscular currents</p>
+    <div className='business-container'>
+      <h1 ref={titleRef} className='business-title'>
+        Solution
+      </h1>
+      <p ref={subtitleRef} className='solution-subtitle'>
+        To assist muscles development in neuromuscular therapy, rehabilitation, and physical training
+      </p>
+      <div className="items-container">
+        {solutionItems.map((item, index) => (
+          <div 
+            key={index}
+            className="business-card"
+            ref={el => itemsRef.current[index] = el}
+          >
+            <div className="card-inner">
+              <img src={item.icon} alt={item.title} className="card-image" />
+              <h3 className="card-heading">{item.title}</h3>
+              <p className="card-description">{item.description}</p>
             </div>
-            <div 
-              className="item-two"
-              ref={el => itemsRef.current[1] = el}
-            >
-                <img src={Diagnostics} alt="Diagnostics" />
-                <h3>Diagnostics</h3>
-                <p>Dedicated algorithms and AI through smartphone and cloud computing</p>
-            </div>
-            <div 
-              className="item-two"
-              ref={el => itemsRef.current[2] = el}
-            >
-                <img src={magnetically} alt="magnetically" />
-                <h3>Magnetically Shielded environment</h3>
-                <p>No need</p>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

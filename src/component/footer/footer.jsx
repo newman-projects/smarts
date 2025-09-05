@@ -15,6 +15,8 @@ export default function Footer() {
             <a href="#problem" className="nav-link">Problem</a>
             <a href="#solution" className="nav-link">Solution</a>
             <a href="#product" className="nav-link">Product</a>
+            <a href="#business" className="nav-link">Business</a>
+            <a href="#team" className="nav-link">Team</a>
           </nav>
         </div>
         <div className="footer-right">

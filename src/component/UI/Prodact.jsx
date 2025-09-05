@@ -3,7 +3,7 @@ import diagnosis from '../../assets/diagnosis.svg'
 import sensitivity from '../../assets/sensitivity.svg'
 import Prototype from '../../assets/Prototype.svg'
 import Integrability from '../../assets/Integrability.svg'
-import '../styles/prodact.css'
+import '../styles/dark-section.css'
 
 export default function Product() {
   const titleRef = useRef(null)
@@ -34,46 +34,49 @@ export default function Product() {
     }
   }, [])
 
+  const productItems = [
+    {
+      icon: diagnosis,
+      title: "Unique Diagnosis",
+      description: "Small and inner muscles, muscle engagement and neuromuscular junction"
+    },
+    {
+      icon: sensitivity,
+      title: "Sensitivity",
+      description: "Measure magnetic fields (pT) using a highly sensitive vector quantum gradiometer"
+    },
+    {
+      icon: Prototype,
+      title: "LAB Prototype",
+      description: "Gradiometer sensor based on quantum physics principles"
+    },
+    {
+      icon: Integrability,
+      title: "Integrability",
+      description: "Employing a real-time sensor array integrated with cardiac and nervous system activity"
+    }
+  ]
+
   return (
-    <div className='product-container'>
-        <h1 ref={titleRef}>Product Overview</h1>
-        <div className="items-container">
-            <div 
-              className="item-three"
-              ref={el => itemsRef.current[0] = el}
-            >
-                <img src={diagnosis} alt="diagnosis" />
-                <h3>Unique Diagnosis</h3>
-                <p>Small and inner muscles, muscle engagement and neuromuscular junction</p>
+    <div className='dark-container'>
+      <h1 ref={titleRef} className='dark-title' style={{marginBottom: '5%'}}>
+        Product Overview
+      </h1>
+      <div className="items-container">
+        {productItems.map((item, index) => (
+          <div 
+            key={index}
+            className="dark-card"
+            ref={el => itemsRef.current[index] = el}
+          >
+            <div className="card-inner">
+              <img src={item.icon} alt={item.title} className="card-image" />
+              <h3 className="card-heading">{item.title}</h3>
+              <p className="card-description">{item.description}</p>
             </div>
-            <div 
-              className="item-three"
-              ref={el => itemsRef.current[1] = el}
-            >
-                <img src={sensitivity} alt="sensitivity" />
-                <h3>Sensitivity</h3>
-                <p>Measure magnetic fields (pT) using a highly sensitive vector quantum gradiometer</p>
-            </div>
-            <div 
-              className="item-three"
-              ref={el => itemsRef.current[2] = el}
-            >
-                <img src={Prototype} alt="Prototype" />
-                <h3>LAB Prototype</h3>
-                <p>Gradiometer sensor based on quantum physics principles</p>
-            </div>
-            <div 
-              className="item-three"
-              ref={el => itemsRef.current[3] = el}
-            >
-                <img src={Integrability} alt="Integrability" />
-                <h3>Integrability</h3>
-                <p>Employing a real-time sensor array integrated with cardiac and nervous system activity</p>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
-
-
-

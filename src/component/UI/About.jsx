@@ -35,11 +35,13 @@ export default function About() {
     <div className="about-container">
       <div className="content-wrapper">
         <div className="image-section">
-          <img 
-            src={about} 
-            alt="About MuscleSen" 
-            className="about-image"
-          />
+          <div className="image-3d-container">
+            <img 
+              src={about} 
+              alt="About MuscleSen" 
+              className="about-image"
+            />
+          </div>
         </div>
         
         <div className="text-section">

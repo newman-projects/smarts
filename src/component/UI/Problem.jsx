@@ -3,7 +3,7 @@ import signal from '../../assets/signal.svg'
 import continuity from '../../assets/continuity.svg'
 import costs from '../../assets/costs.svg'
 import dissatisfaction from '../../assets/dissatisfaction.svg'
-import '../styles/problem.css'
+import '../styles/dark-section.css'
 
 export default function Problem() {
   const titleRef = useRef(null)
@@ -36,46 +36,52 @@ export default function Problem() {
     }
   }, [])
 
+  const problemItems = [
+    {
+      icon: signal,
+      title: "Signal Detection Gap",
+      description: "Inner and small muscles. Muscle engagement"
+    },
+    {
+      icon: continuity,
+      title: "Continuity gap",
+      description: "Setup complexity. Inconsistent initial conditions. Monitoring multiple muscles"
+    },
+    {
+      icon: costs,
+      title: "Costs",
+      description: "Quality EMG Quality MMG - Hundreds $ vs Thousands $"
+    },
+    {
+      icon: dissatisfaction,
+      title: "Customer dissatisfaction",
+      description: "EMG MMG invasive, sweat. Environmental noise. Inconvenience Not stable"
+    }
+  ]
+
   return (
-    <div className='problem-container'>
-        <h1 ref={titleRef}>Problem</h1>
-        <h2 ref={subtitleRef}>Across therapeutic care, rehabilitation and athletic training</h2>
-        <div className="items-container">
-            <div 
-              className="item-one" 
-              ref={el => itemsRef.current[0] = el}
-            >
-                <img src={signal} alt="signal" />
-                <h3>Signal Detection Gap</h3>
-                <p>Inner and small muscles. <br />Muscle engagement</p>
+    <div className='dark-container'>
+      <h1 ref={titleRef} className='dark-title'>
+        Problem
+      </h1>
+      <h2 ref={subtitleRef} className='dark-subtitle'>
+        Across therapeutic care, rehabilitation and athletic training
+      </h2>
+      <div className="items-container">
+        {problemItems.map((item, index) => (
+          <div 
+            key={index}
+            className="dark-card"
+            ref={el => itemsRef.current[index] = el}
+          >
+            <div className="card-inner">
+              <img src={item.icon} alt={item.title} className="card-image" />
+              <h3 className="card-heading">{item.title}</h3>
+              <p className="card-description">{item.description}</p>
             </div>
-            <div 
-              className="item-one"
-              ref={el => itemsRef.current[1] = el}
-            >
-                <img src={continuity} alt="continuity" />
-                <h3>Continuity gap</h3>
-                <p>Setup complexity. Inconsistent initial conditions. Monitoring multiple muscles</p>
-            </div>
-            <div 
-              className="item-one"
-              ref={el => itemsRef.current[2] = el}
-            >
-                <img src={costs} alt="costs" />
-                <h3>Costs</h3>
-                <p>Quality EMG        Quality MMG <br />Hundreds $         Thousands $</p>
-            </div>
-            <div 
-              className="item-one"
-              ref={el => itemsRef.current[3] = el}
-            >
-                <img src={dissatisfaction} alt="dissatisfaction" />
-                <h3>Customer dissatisfaction</h3>
-                <p>EMG MMG<br />invasive, sweat. Environmental noise.<br />Inconvenience Not stable</p>
-            </div>
-        </div>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }
-
-

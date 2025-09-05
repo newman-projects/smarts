@@ -4,7 +4,7 @@
   min-height: 90vh;
   display: flex;
   border-radius: 16px;
-  box-shadow: 5px 5px;
+  box-shadow: 10px 10px 5px rgba(28, 179, 255, 0.1);
   align-items: center;
   padding: 2rem 0;
   background: white;
@@ -25,6 +25,12 @@
   width: 50%;
   display: flex;
   justify-content: center;
+  perspective: 1000px;
+}
+
+.image-3d-container {
+  transform-style: preserve-3d;
+  transition: transform 0.5s ease-in-out;
 }
 
 .about-image {
@@ -35,6 +41,17 @@
   transform: translateX(-50px);
   opacity: 0;
   animation: slideInLeft 1s ease-out 0.5s forwards;
+  transition: all 0.5s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.image-3d-container:hover {
+  transform: rotate3d(1, 1, 0, 15deg);
+}
+
+.image-3d-container:hover .about-image {
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
+  transform: translateX(0) translateZ(20px) scale(1.05);
 }
 
 .text-section {
