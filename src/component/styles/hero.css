@@ -6,31 +6,31 @@
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  /* padding: 5% 5%; */
+  border-radius: 16px;
   position: relative;
   overflow: hidden;
+  border-radius: 16px;
 }
 
-.hero-container::before {
-  content: '';
+.hero-video {
   position: absolute;
-  top: 1%;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background-image: url('../../assets/smartsen.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  object-fit: cover;
   border-radius: 16px;
   z-index: 1;
+  border-radius: 16px;
 }
 
 .hero-container::after {
   content: '';
   position: absolute;
-  top: 2%;
-  /* width: 100%; */
-  height: 95%;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background: rgba(0, 0, 0, 0.4);
   border-radius: 16px;
   z-index: 2;
@@ -42,6 +42,22 @@
   max-width: 50%;
   color: white;
   margin-left: 5%;
+}
+
+.hero-right-title {
+  position: absolute;
+  right: 32%;
+  top: 40%;
+  z-index: 3;
+  color: var(--primary-color);
+}
+
+.hero-right-title h1 {
+  font-size: clamp(3rem, 7vw, 6rem);
+  font-weight: bold;
+  margin: 0;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  opacity: 0.95;
 }
 
 .title {
@@ -75,6 +91,7 @@
 
 .info {
   opacity: 0;
+  font-family: var(--handwriting-font);
   transform: translateX(-100px);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
 }
@@ -95,14 +112,11 @@
 .musclesen-wrapper {
   display: inline-flex;
   align-items: center;
-  margin-left: 0.5rem;
-  vertical-align: middle;
 }
 
 .musclesen-logo {
   height: clamp(4rem, 4vw, 3rem);
   width: auto;
-  width: 250px;
   object-fit: contain;
   filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.5));
 }
@@ -114,18 +128,14 @@
     min-height: 500px;
   }
   
-  .hero-container::before,
-  .hero-container::after {
-    top: 3%;
-    left: 3%;
-    width: 94%;
-    height: 94%;
-    border-radius: 12px;
-  }
-  
   .hero-content {
     margin-left: 4%;
     max-width: 75%;
+  }
+  
+  .hero-right-title {
+    right: 28%;
+    top: 20%;
   }
   
   .title {
@@ -140,18 +150,18 @@
     min-height: 400px;
   }
   
-  .hero-container::before,
-  .hero-container::after {
-    top: 2%;
-    left: 2%;
-    width: 96%;
-    height: 96%;
-    border-radius: 8px;
-  }
-  
   .hero-content {
     margin-left: 3%;
     max-width: 85%;
+  }
+  
+  .hero-right-title {
+    right: 15%;
+    top: 50%;
+  }
+  
+  .hero-right-title h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
   }
   
   .title {
@@ -175,14 +185,18 @@
     height: 85vh;
   }
   
-  .hero-container::before,
-  .hero-container::after {
-    border-radius: 6px;
-  }
-  
   .hero-content {
     margin-left: 2%;
     max-width: 90%;
+  }
+  
+  .hero-right-title {
+    right: 3%;
+    top: 10%;
+  }
+  
+  .hero-right-title h1 {
+    font-size: clamp(1.5rem, 5vw, 3rem);
   }
   
   .title {
@@ -210,6 +224,11 @@
   .hero-content {
     margin-left: 1%;
     max-width: 95%;
+  }
+  
+  .hero-right-title {
+    right: 2%;
+    top: 8%;
   }
   
   .title {

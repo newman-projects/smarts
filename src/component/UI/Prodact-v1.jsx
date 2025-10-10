@@ -73,15 +73,16 @@ export default function ProdactV1() {
             ref={leftSectionRef}
             className="left-section"
           >
-            <div className="section-topic">The Product</div>
+            <div className="section-topic">The Product Technology</div>
             <p className="section-description">
-              Our advanced quantum gradiometer technology utilizes highly sensitive vector sensors 
-              to measure magnetic fields at picoTesla (pT) precision levels. This breakthrough 
-              system targets small and inner muscles through sophisticated muscle engagement 
-              analysis and neuromuscular junction monitoring. The gradiometer sensor, built on 
-              quantum physics principles, features a real-time sensor array that seamlessly 
-              integrates with both cardiac and nervous system activity monitoring, delivering 
-              unprecedented diagnostic accuracy for complex physiological assessments.
+              Wearable MuscleSen detects ultra-weak neuromuscular currents by monitoring tiny magnetic fields 
+              during muscle activity, contraction and relaxation, using AI-powered diagnostics and AI-driven cloud services
+            </p>
+            <p className="section-description">
+              Our advanced quantum gradiometer technology utilizes highly sensitive sensors to measure magnetic fields at picoTesla (pT) precision levels. 
+            </p>
+            <p className="section-description">
+              MuscleSen is the smart bet. The future of muscle health starts here.
             </p>
             
             {/* Option 1: Accuracy/Precision Card */}
@@ -93,12 +94,12 @@ export default function ProdactV1() {
             </div> */}
 
             {/* Option 2: Technology Level Card */}
-            <div className="experience-card">
+            {/* <div className="experience-card">
               <div className="experience-number">99.9%</div>
               <div className="experience-text">
                 Diagnostic<br />Accuracy
               </div>
-            </div>
+            </div> */}
 
             {/* Option 3: Innovation Card */}
             {/* <div className="experience-card">

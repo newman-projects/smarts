@@ -50,19 +50,19 @@ export default function SolutionV1() {
       id: 1,
       image: quantum,
       title: "Quantum gradiometer sensor",
-      description: "Precisely detects tiny variations in the magnetic field. Monitoring weak neuromuscular currents"
+      description: "Precisely detects tiny variations in the magnetic field. Monitoring weak neuromuscular currents."
     },
     {
       id: 2,
       image: Diagnostics,
       title: "Diagnostics",
-      description: "Dedicated algorithms and AI through smartphone and cloud computing"
+      description: "Dedicated algorithms and Edge AI through smartphone and AI cloud computing"
     },
     {
       id: 3,
       image: magnetically,
       title: "Magnetically Shielded environment",
-      description: "No need"
+      description: "No shielded chamber required. Uses built-in adaptive shielding."
     }
   ]
 
@@ -81,10 +81,13 @@ export default function SolutionV1() {
   return (
     <div className='business-container'>
       <h1 ref={titleRef} className='business-title'>
-        Solution
+        Our Solution
       </h1>
       <p ref={subtitleRef} className='solution-subtitle'>
-        To assist muscles development in neuromuscular therapy, rehabilitation, and physical training
+        To assist muscles development in neuromuscular therapy, rehabilitation, and physical training<br />MuscleSen is not just another wearable. It is a leap forward in muscle and neuromuscular health tech.
+        Do wearable muscle monitoring the smart, with high sensitively, non-invasive way and no shielded chamber.
+        MuscleSen sets a new standard for muscle and neuromuscular health solutions.
+
       </p>
       <div className="solution-content">
         <div 

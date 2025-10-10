@@ -44,22 +44,24 @@ export default function Solution() {
     {
       icon: Diagnostics,
       title: "Diagnostics",
-      description: "Dedicated algorithms and AI through smartphone and cloud computing"
+      description: "Dedicated algorithms and Edge AI through smartphone and AI cloud computing"
     },
     {
       icon: magnetically,
       title: "Magnetically Shielded environment",
-      description: "No need"
+      description: "No shielded chamber required. Uses built-in adaptive shielding."
     }
   ]
 
   return (
     <div className='business-container'>
       <h1 ref={titleRef} className='business-title'>
-        Solution
+        Our Solution
       </h1>
       <p ref={subtitleRef} className='solution-subtitle'>
-        To assist muscles development in neuromuscular therapy, rehabilitation, and physical training
+        To assist muscles development in neuromuscular therapy, rehabilitation, and physical training <br /> MuscleSen is not just another wearable. It is a leap forward in muscle and neuromuscular health tech.
+        Do wearable muscle monitoring the smart, with high sensitively, non-invasive way and no shielded chamber.
+        MuscleSen sets a new standard for muscle and neuromuscular health solutions.
       </p>
       <div className="items-container">
         {solutionItems.map((item, index) => (

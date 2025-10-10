@@ -52,20 +52,29 @@ export default function Navbar() {
           <a href="#about" className="mobile-nav-link" onClick={toggleMenu}>
             About
           </a>
-          <a href="#problem" className="mobile-nav-link" onClick={toggleMenu}>
+          {/* <a href="#problem" className="mobile-nav-link" onClick={toggleMenu}>
             Problem
+          </a> */}
+          <a href="#product" className="mobile-nav-link" onClick={toggleMenu}>
+            Product
           </a>
           <a href="#solution" className="mobile-nav-link" onClick={toggleMenu}>
             Solution
           </a>
-          <a href="#product" className="mobile-nav-link" onClick={toggleMenu}>
-            Product
+          <a href="#uniqueness" className="mobile-nav-link" onClick={toggleMenu}>
+            uniqueness
           </a>
-          <a href="#business" className="mobile-nav-link" onClick={toggleMenu}>
+          <a href="#market" className="mobile-nav-link" onClick={toggleMenu}>
+            Market
+          </a>
+          {/* <a href="#business" className="mobile-nav-link" onClick={toggleMenu}>
             Business
-          </a>
+          </a> */}
           <a href="#team" className="mobile-nav-link" onClick={toggleMenu}>
             Team
+          </a>
+          <a href="#contact" className="mobile-nav-link" onClick={toggleMenu}>
+            Contact Us
           </a>
         </nav>
       </div>

@@ -48,10 +48,14 @@ export default function About() {
           <div className="text">
             <h1 ref={titleRef}>About MuscleSen</h1>
             <p ref={paragraph1Ref}>
-              The Muscle quantum Sensor monitors even slightest neuromuscular electrical activity…
+              The future of muscle health starts here. <br />
+              The MuscleSen quantum gradiometer sensor is here  ▶   to change the game for real-time feedback and diagnosis, accelerate recovery, track progress in fitness and rehabilitation, and target specific muscles
+
             </p>
             <p ref={paragraph2Ref}>
-              … by measuring extremely weak magnetic fields generated during muscle contraction and relaxation (Magnetomyography)
+              The MuscleSen monitors even slightest neuromuscular electrical activity… <br />
+              … by measuring extremely weak magnetic fields generated during muscle contraction and relaxation (<b>M</b>agneto<b>m</b>yo<b>g</b>raphy)
+
             </p>
           </div>
         </div>

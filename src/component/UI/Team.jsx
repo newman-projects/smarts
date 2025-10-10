@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react'
 import shai from '../../assets/team/shai.jpg'
 import eliran from '../../assets/team/eliran.jpg'
-import yair from '../../assets/team/yair.png'
+import profile from '../../assets/team/profile.jpg'
 import vitali from '../../assets/team/vitali.png'
 import '../styles/team.css'
 
@@ -51,8 +51,8 @@ export default function Team() {
 			description: "Quantum Physics Expert with deep knowledge in advanced computational systems and cutting-edge technology development."
 		},
 		{
-			image: yair,
-			name: "Dr. Yair Richter",
+			image: profile,
+			name: "VP R&D",
 			title: "VP R&D",
 			description: "Algorithms and AI Expert specializing in machine learning, data science, and innovative research methodologies."
 		},

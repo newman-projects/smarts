@@ -1,9 +1,46 @@
 /* google fonts */
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
 
 /* css variables */
 :root {
+  /* Font Variables */
+  --google-font: "Inter", sans-serif;
+  --roboto-font: "Roboto", sans-serif;
+  --poppins-font: "Poppins", sans-serif;
+  --montserrat-font: "Montserrat", sans-serif;
+  --open-sans-font: "Open Sans", sans-serif;
+  --lato-font: "Lato", sans-serif;
+  --nunito-font: "Nunito", sans-serif;
+  --source-sans-font: "Source Sans Pro", sans-serif;
+  
+  /* Handwriting Fonts */
+  --handwriting-font: "Dancing Script", cursive;
+  --pacifico-font: "Pacifico", cursive;
+  --great-vibes-font: "Great Vibes", cursive;
+  --satisfy-font: "Satisfy", cursive;
+  
+  /* Serif Fonts */
+  --playfair-font: "Playfair Display", serif;
+  --merriweather-font: "Merriweather", serif;
+  
+  /* Primary font (keeping your existing structure) */
+  --font-name: "Roboto", sans-serif;
+  
+  /* Color Variables */
   --primary-color: #379cf6;
   --heading-color: #fff;
   --btn-primary-bg: #379cf6;
@@ -35,7 +72,6 @@
     rgba(11, 4, 73, 0.687) 100%
   );
   --testimonial-bg: #1a0f4f;
-  --font-name: "Roboto", sans-serif;
   --small-text-color: rgba(255, 255, 255, 0.774);
   --icon-bg:#151e4f;
   --dark-title: #333;
@@ -189,6 +225,22 @@ section {
 .light-theme .team_img {
   background: #ddd;
 }
+
+/* Font utility classes for easy usage */
+.font-google { font-family: var(--google-font); }
+.font-roboto { font-family: var(--roboto-font); }
+.font-poppins { font-family: var(--poppins-font); }
+.font-montserrat { font-family: var(--montserrat-font); }
+.font-open-sans { font-family: var(--open-sans-font); }
+.font-lato { font-family: var(--lato-font); }
+.font-nunito { font-family: var(--nunito-font); }
+.font-source-sans { font-family: var(--source-sans-font); }
+.font-handwriting { font-family: var(--handwriting-font); }
+.font-pacifico { font-family: var(--pacifico-font); }
+.font-great-vibes { font-family: var(--great-vibes-font); }
+.font-satisfy { font-family: var(--satisfy-font); }
+.font-playfair { font-family: var(--playfair-font); }
+.font-merriweather { font-family: var(--merriweather-font); }
 
 @media only screen and (max-width:1024px) {
   .container {
