@@ -1,4 +1,4 @@
-/* Hero.css - Responsive Design */
+/* Hero.css - Optimized Wave System */
 .hero-container {
   height: 90vh;
   min-height: 600px;
@@ -9,31 +9,123 @@
   border-radius: 16px;
   position: relative;
   overflow: hidden;
-  border-radius: 16px;
+  background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1429 100%);
 }
 
-.hero-video {
+/* Optimized Flowing Waves Animation */
+.light-waves {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  border-radius: 16px;
   z-index: 1;
-  border-radius: 16px;
+  overflow: hidden;
+  /* Stop at the center of the SmartSen image
+     Image starts at right: 5%, width: 40%
+     Center = 100% - 5% - (40%/2) = 95% - 20% = 75% */
+  clip-path: polygon(0 0, calc(100% - 5% - 20%) 0, calc(100% - 5% - 20%) 100%, 0 100%);
+  /* GPU acceleration for smoother performance */
+  will-change: transform;
+  transform: translateZ(0);
 }
 
-.hero-container::after {
-  content: '';
+.wave {
   position: absolute;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
-  border-radius: 16px;
+  top: 0;
+}
+
+.wave svg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.wave path {
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Optimize rendering */
+  vector-effect: non-scaling-stroke;
+}
+
+/* Reduced to 2 waves for better performance */
+/* Wave 1 - Main wave with primary color glow */
+.wave1 path {
+  stroke: var(--primary-color);
+  stroke-width: 8;
+  /* Reduced blur for better performance */
+  filter: drop-shadow(0 0 20px var(--primary-color)) 
+          drop-shadow(0 0 30px var(--primary-color));
+  opacity: 0.9;
+  /* Half screen length wave that travels */
+  stroke-dasharray: 700 700;
+  animation: wave-draw 8s linear infinite;
+}
+
+/* Wave 2 - Secondary layer with primary color glow */
+.wave2 path {
+  stroke: var(--primary-color);
+  stroke-width: 6;
+  filter: drop-shadow(0 0 18px var(--primary-color)) 
+          drop-shadow(0 0 28px var(--primary-color));
+  opacity: 0.7;
+  /* Half screen length wave that travels */
+  stroke-dasharray: 700 700;
+  animation: wave-draw 8s linear infinite;
+  animation-delay: 4s; /* Start when first wave reaches center */
+}
+
+/* Hide extra waves for performance */
+.wave3,
+.wave4,
+.wave5 {
+  display: none;
+}
+
+/* Smooth wave drawing from left to clip point */
+@keyframes wave-draw {
+  0% {
+    stroke-dashoffset: 1400;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Hero Image on Right */
+.hero-image-wrapper {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40%;
+  max-width: 500px;
   z-index: 2;
+  filter: drop-shadow(0 0 30px rgba(59, 130, 246, 0.4));
+  /* GPU acceleration */
+  will-change: transform;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero-content {
@@ -61,7 +153,7 @@
 }
 
 .title {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   opacity: 0;
   transform: translateX(-100px);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -73,25 +165,35 @@
 }
 
 .title h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-size: clamp(2rem, 4vw, 3rem);
   font-weight: bold;
-  margin: 0;
+  margin: 0 0 1rem 0;
   opacity: 0.95;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-  line-height: 1.1;
+  line-height: 1.2;
 }
 
 .title h4 {
   font-size: clamp(1rem, 3vw, 2rem);
   font-weight: 300;
-  margin: 0.5rem 0 0 0;
+  margin: 0 0 1.5rem 0;
   opacity: 0.9;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.4;
+}
+
+.title h2 {
+  font-size: clamp(2rem, 3.5vw, 2.5rem);
+  font-weight: 400;
+  margin: 0;
+  opacity: 0.85;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+  line-height: 1.6;
+  font-family: var(--handwriting-font);
 }
 
 .info {
   opacity: 0;
-  font-family: var(--handwriting-font);
   transform: translateX(-100px);
   transition: all 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.3s;
 }
@@ -103,8 +205,8 @@
 
 .info p {
   font-size: clamp(1rem, 3.5vw, 2.5rem);
-  line-height: 1.4;
-  margin: 0;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
   font-weight: 400;
 }
@@ -130,7 +232,12 @@
   
   .hero-content {
     margin-left: 4%;
-    max-width: 75%;
+    max-width: 55%;
+  }
+
+  .hero-image-wrapper {
+    width: 38%;
+    right: 3%;
   }
   
   .hero-right-title {
@@ -139,7 +246,13 @@
   }
   
   .title {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2.5rem;
+  }
+  
+  .light-waves {
+    /* Image: right: 3%, width: 38%
+       Center = 100% - 3% - (38%/2) = 97% - 19% = 78% */
+    clip-path: polygon(0 0, calc(100% - 3% - 19%) 0, calc(100% - 3% - 19%) 100%, 0 100%);
   }
 }
 
@@ -152,7 +265,13 @@
   
   .hero-content {
     margin-left: 3%;
-    max-width: 85%;
+    max-width: 100%;
+  }
+
+  .hero-image-wrapper {
+    width: 35%;
+    right: 2%;
+    opacity: 0.7;
   }
   
   .hero-right-title {
@@ -165,15 +284,29 @@
   }
   
   .title {
+    margin-bottom: 2rem;
+  }
+
+  .title h1 {
+    margin-bottom: 0.8rem;
+  }
+
+  .title h4 {
     margin-bottom: 1.2rem;
   }
   
   .info p {
-    line-height: 1.3;
+    line-height: 1.5;
   }
   
   .musclesen-wrapper {
     margin-left: 0.3rem;
+  }
+  
+  .light-waves {
+    /* Image: right: 2%, width: 35%
+       Center = 100% - 2% - (35%/2) = 98% - 17.5% = 80.5% */
+    clip-path: polygon(0 0, calc(100% - 2% - 17.5%) 0, calc(100% - 2% - 17.5%) 100%, 0 100%);
   }
 }
 
@@ -183,34 +316,53 @@
     padding: 2% 2%;
     min-height: 350px;
     height: 85vh;
+    flex-direction: column;
+    justify-content: center;
   }
   
   .hero-content {
     margin-left: 2%;
     max-width: 90%;
   }
-  
-  .hero-right-title {
-    right: 3%;
-    top: 10%;
+
+  .hero-image-wrapper {
+    width: 50%;
+    right: 50%;
+    top: auto;
+    bottom: 5%;
+    transform: translateX(50%);
+    opacity: 0.6;
   }
   
-  .hero-right-title h1 {
-    font-size: clamp(1.5rem, 5vw, 3rem);
+  .hero-right-title {
+    display: none;
   }
   
   .title {
+    margin-bottom: 1.5rem;
+  }
+
+  .title h1 {
+    margin-bottom: 0.6rem;
+  }
+
+  .title h4 {
     margin-bottom: 1rem;
   }
   
   .info p {
-    line-height: 1.2;
+    line-height: 1.4;
+    margin-bottom: 0.8rem;
   }
   
   .musclesen-wrapper {
     display: block;
     margin-left: 0;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
+  }
+  
+  .light-waves {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   }
 }
 
@@ -225,13 +377,20 @@
     margin-left: 1%;
     max-width: 95%;
   }
-  
-  .hero-right-title {
-    right: 2%;
-    top: 8%;
+
+  .hero-image-wrapper {
+    width: 60%;
   }
   
   .title {
+    margin-bottom: 1.2rem;
+  }
+
+  .title h1 {
+    margin-bottom: 0.2rem;
+  }
+
+  .title h4 {
     margin-bottom: 0.8rem;
   }
   

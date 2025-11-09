@@ -55,11 +55,11 @@ export default function Navbar() {
           {/* <a href="#problem" className="mobile-nav-link" onClick={toggleMenu}>
             Problem
           </a> */}
-          <a href="#product" className="mobile-nav-link" onClick={toggleMenu}>
-            Product
-          </a>
           <a href="#solution" className="mobile-nav-link" onClick={toggleMenu}>
             Solution
+          </a>
+          <a href="#product" className="mobile-nav-link" onClick={toggleMenu}>
+            Product
           </a>
           <a href="#uniqueness" className="mobile-nav-link" onClick={toggleMenu}>
             uniqueness
@@ -73,9 +73,9 @@ export default function Navbar() {
           <a href="#team" className="mobile-nav-link" onClick={toggleMenu}>
             Team
           </a>
-          <a href="#contact" className="mobile-nav-link" onClick={toggleMenu}>
+          {/* <a href="#contact" className="mobile-nav-link" onClick={toggleMenu}>
             Contact Us
-          </a>
+          </a> */}
         </nav>
       </div>
     </>

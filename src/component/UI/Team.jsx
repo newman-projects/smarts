@@ -3,7 +3,10 @@ import shai from '../../assets/team/shai.jpg'
 import eliran from '../../assets/team/eliran.jpg'
 import profile from '../../assets/team/profile.jpg'
 import vitali from '../../assets/team/vitali.png'
+import { FiCornerDownRight } from 'react-icons/fi' // Feather Icons - corner down right
 import '../styles/team.css'
+
+
 
 export default function Team() {
 	const titleRef = useRef(null)
@@ -42,25 +45,25 @@ export default function Team() {
 			image: shai,
 			name: "Shai Richter",
 			title: "Co-founder, CEO",
-			description: "Innovative product development leader with extensive experience in building successful tech companies and driving strategic vision."
+			description: "Leading innovative products development, promoting strategic collaborations and market penetration, also within the framework of binational funding programs"
 		},
 		{
 			image: eliran,
 			name: "Dr. Eliran Talker",
 			title: "Chief Technical Officer",
-			description: "Quantum Physics Expert with deep knowledge in advanced computational systems and cutting-edge technology development."
+			description: "Applied and quantum physics expert,  deep knowledge in atomic spectroscopy, optical pumping, quantum Magnetometer/Gradiometer and quantum interferometer"
 		},
 		{
 			image: profile,
 			name: "VP R&D",
 			title: "VP R&D",
-			description: "Algorithms and AI Expert specializing in machine learning, data science, and innovative research methodologies."
+			description: "Algorithms development specialist on random & very weak signals, AI expert with machine & deep learning methodologies"
 		},
 		{
 			image: vitali,
 			name: "Dr. Vitali Kilimnik M.D",
 			title: "Chief Medical Officer",
-			description: "Orthopedic and surgical specialist bringing medical expertise and clinical insights to our innovative solutions."
+			description: "Board-certified orthopedic surgeon, specializing in pediatric orthopedics. Extensive experience in clinical care, trauma, and medical education"
 		},
 	]
 
@@ -80,7 +83,7 @@ export default function Team() {
 				The Team
 			</h1>
 			<p ref={subtitleRef} className="dark-subtitle">
-				Meet the brilliant minds behind our innovation, each bringing unique expertise and passion to drive our mission forward.
+				Meet the leaders behind our innovation, each bringing unique expertise and passion to drive our mission forward
 			</p>
 			
 			<div className="items-container">
@@ -108,6 +111,14 @@ export default function Team() {
 					</div>
 				))}
 			</div>
+
+			<h3 className="advisory-board">
+				<span className="advisory-board-line">+ Advisory board of senior physicians</span>
+				<span className="advisory-board-line">
+					<FiCornerDownRight className="advisory-board-arrow" />
+					specializing in neuromuscular therapy, rehabilitation and physical training
+				</span>
+			</h3>
 
 			{/* Modal */}
 			{selectedMember && (

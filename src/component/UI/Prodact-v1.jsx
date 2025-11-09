@@ -1,15 +1,13 @@
 import React, { useEffect, useRef } from 'react'
-import diagnosis from '../../assets/diagnosis.svg'
-import sensitivity from '../../assets/sensitivity.svg'
-import Prototype from '../../assets/Prototype.svg'
-import Integrability from '../../assets/Integrability.svg'
+import prodact from '../../assets/prodact.png'
+
 import '../styles/prodact.css'
 
 export default function ProdactV1() {
   const titleRef = useRef(null)
   const subtitleRef = useRef(null)
   const leftSectionRef = useRef(null)
-  const boxesRef = useRef([])
+  const productImageRef = useRef(null)
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -29,40 +27,18 @@ export default function ProdactV1() {
     if (titleRef.current) observer.observe(titleRef.current)
     if (subtitleRef.current) observer.observe(subtitleRef.current)
     if (leftSectionRef.current) observer.observe(leftSectionRef.current)
-    boxesRef.current.forEach(box => {
-      if (box) observer.observe(box)
-    })
+    if (productImageRef.current) observer.observe(productImageRef.current)
 
     return () => {
       observer.disconnect()
     }
   }, [])
 
-  const skillsData = [
-    { 
-			skill: "Unique Diagnosis", 
-			img: diagnosis
-		},
-    { 
-			skill: "Sensitivity", 
-			img: sensitivity
-		},
-    { 
-			skill: "LAB Prototype", 
-			img: Prototype
-		},
-    { 
-			skill: "Integrability", 
-			img: Integrability
-		},
-
-  ]
-
   return (
     <section className="modern-product">
       <div className="product-container">
         <h1 ref={titleRef} className="modern-title">
-          Product Overview
+          The Product Technology
         </h1>
         <p ref={subtitleRef} className="modern-subtitle">
           Revolutionary quantum-based diagnostic solutions for next-generation healthcare
@@ -79,58 +55,25 @@ export default function ProdactV1() {
               during muscle activity, contraction and relaxation, using AI-powered diagnostics and AI-driven cloud services
             </p>
             <p className="section-description">
-              Our advanced quantum gradiometer technology utilizes highly sensitive sensors to measure magnetic fields at picoTesla (pT) precision levels. 
+              Our advanced quantum gradiometer technology utilizes highly sensitive sensors to measure magnetic fields at picoTesla (pT) precision levels
             </p>
             <p className="section-description">
-              MuscleSen is the smart bet. The future of muscle health starts here.
+              MuscleSen is based on core quantum physics concepts such as atomic vector magnetometer and electron spin dynamics
             </p>
-            
-            {/* Option 1: Accuracy/Precision Card */}
-            {/* <div className="experience-card">
-              <div className="experience-number">pT</div>
-              <div className="experience-text">
-                Precision<br />Sensitivity
-              </div>
-            </div> */}
-
-            {/* Option 2: Technology Level Card */}
-            {/* <div className="experience-card">
-              <div className="experience-number">99.9%</div>
-              <div className="experience-text">
-                Diagnostic<br />Accuracy
-              </div>
-            </div> */}
-
-            {/* Option 3: Innovation Card */}
-            {/* <div className="experience-card">
-              <div className="experience-number">1st</div>
-              <div className="experience-text">
-                Quantum<br />Innovation
-              </div>
-            </div> */}
-
-            {/* Option 4: Real-time Processing */}
-            {/* <div className="experience-card">
-              <div className="experience-number">Real</div>
-              <div className="experience-text">
-                Time<br />Analysis
-              </div>
-            </div> */}
+            <p className="section-description handwriting-style">
+              MuscleSen is the smart bet. The future of muscle health starts here
+            </p>
           </div>
           
-          <div className="skills-grid">
-            {skillsData.map((item, index) => (
-              <div 
-                key={index}
-                className="skill-box"
-                ref={el => boxesRef.current[index] = el}
-              >
-                <div className="skill-content">
-									<img src={item.img} alt={item.skill} />
-                  <div className="skill-name">{item.skill}</div>
-                </div>
-              </div>
-            ))}
+          <div 
+            ref={productImageRef}
+            className="product-image-container"
+          >
+            <img 
+              src={prodact} 
+              alt="MuscleSen Product" 
+              className="product-image"
+            />
           </div>
         </div>
       </div>

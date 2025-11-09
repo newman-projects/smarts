@@ -337,6 +337,32 @@
   margin: 0;
 }
 
+/* Advisory Board Styling */
+.advisory-board {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin-top: 3rem;
+  line-height: 1.8;
+  max-width: 1000px;
+  margin-left: 25%;
+  margin-right: auto;
+  text-align: left;
+  padding-left: 2rem;
+}
+
+.advisory-board-line {
+  display: block;
+}
+
+.advisory-board-arrow {
+  display: inline-block;
+  margin-left: 3rem;
+  margin-right: 0.5rem;
+  color: #40c9ff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
 /* Keyframe Animations */
 @keyframes floating-light {
   0% {
