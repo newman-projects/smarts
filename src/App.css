@@ -1,48 +1,23 @@
-/* google fonts */
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap");
+/* Handwriting Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Pinyon+Script&display=swap");
 @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Pinyon+Script&display=swap');
-
 
 /* css variables */
 :root {
-  /* Font Variables */
-  --google-font: "Inter", sans-serif;
-  --roboto-font: "Roboto", sans-serif;
-  --poppins-font: "Poppins", sans-serif;
-  --montserrat-font: "Montserrat", sans-serif;
-  --open-sans-font: "Open Sans", sans-serif;
-  --lato-font: "Lato", sans-serif;
-  --nunito-font: "Nunito", sans-serif;
-  --source-sans-font: "Source Sans Pro", sans-serif;
-  
   /* Handwriting Fonts */
   --handwriting-font: "Dancing Script", cursive;
   --pacifico-font: "Pacifico", cursive;
   --great-vibes-font: "Great Vibes", cursive;
   --satisfy-font: "Satisfy", cursive;
   --pinyon-script-regular: "Pinyon Script", cursive;
-  
-  /* Serif Fonts */
-  --playfair-font: "Playfair Display", serif;
-  --merriweather-font: "Merriweather", serif;
-  
-  /* Primary font (keeping your existing structure) */
+
+  /* Default font */
   --font-name: "Roboto", sans-serif;
-  
+
   /* Color Variables */
   --primary-color: #379cf6;
   --heading-color: #fff;
@@ -59,7 +34,6 @@
     rgba(15, 18, 61, 1) 52%,
     rgba(11, 41, 69, 1) 84%
   );
-  
   --card-bg-light: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 50%, #235dad 100%);
   --dark: #212121;
   --darker: #111111;
@@ -76,7 +50,7 @@
   );
   --testimonial-bg: #1a0f4f;
   --small-text-color: rgba(255, 255, 255, 0.774);
-  --icon-bg:#151e4f;
+  --icon-bg: #151e4f;
   --dark-title: #333;
 }
 
@@ -96,8 +70,8 @@
     rgba(193, 243, 255, 1) 50%,
     rgba(226, 250, 255, 1) 78%
   );
-  --small-text-color:#000;
-  --card-bg:#fff;
+  --small-text-color: #000;
+  --card-bg: #fff;
   --testimonial-bg: #f7f7f7;
   --team-card-bg: #fff;
 }
@@ -107,7 +81,7 @@
   background-position: center;
   width: 0px;
   height: 0px;
-  background: transparent; /* Make the ball itself transparent */
+  background: transparent;
   position: fixed;
   top: 0;
   left: 0;
@@ -153,17 +127,17 @@
 html, body {
   overflow-x: hidden;
   width: 100%;
+  font-size: 16px;
 }
 
 body {
-  width: 100%;  
+  width: 100%;
   background: var(--body-bg);
   font-family: var(--font-name);
   min-height: 100vh;
   position: relative;
 }
 
-/* Modern background overlay with radial gradients */
 body::before {
   content: '';
   position: fixed;
@@ -177,7 +151,6 @@ body::before {
   z-index: -1;
 }
 
-/* Remove overlay for light theme */
 .light-theme body::before {
   display: none;
 }
@@ -229,21 +202,12 @@ section {
   background: #ddd;
 }
 
-/* Font utility classes for easy usage */
-.font-google { font-family: var(--google-font); }
-.font-roboto { font-family: var(--roboto-font); }
-.font-poppins { font-family: var(--poppins-font); }
-.font-montserrat { font-family: var(--montserrat-font); }
-.font-open-sans { font-family: var(--open-sans-font); }
-.font-lato { font-family: var(--lato-font); }
-.font-nunito { font-family: var(--nunito-font); }
-.font-source-sans { font-family: var(--source-sans-font); }
+/* Font utility classes */
 .font-handwriting { font-family: var(--handwriting-font); }
 .font-pacifico { font-family: var(--pacifico-font); }
 .font-great-vibes { font-family: var(--great-vibes-font); }
 .font-satisfy { font-family: var(--satisfy-font); }
-.font-playfair { font-family: var(--playfair-font); }
-.font-merriweather { font-family: var(--merriweather-font); }
+.font-pinyon { font-family: var(--pinyon-script-regular); }
 
 @media only screen and (max-width:1024px) {
   .container {
@@ -259,8 +223,6 @@ section {
   .subtitle {
     text-align: center;
   }
-  
-  /* Disable cursor glow on mobile devices */
   .cursor {
     display: none;
   }
