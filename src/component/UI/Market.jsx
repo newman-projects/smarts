@@ -56,41 +56,39 @@ const Market = () => {
                 care, sports, and fitness <b>CAGR of 14.5%</b>
               </p>
             </div>
-          </div>
 
-          <div className="market-right animate-on-scroll">
-            <div className="market-stats">
-              <div className="image-container nurse-container">
+            <div className="images-grid-left">
+              <div className="image-container workout-container">
                 <img 
                   src={MarketWorkout}
-                  alt="Healthcare Professional" 
-                  className="market-image nurse-image"
+                  alt="Workout Training" 
+                  className="market-image workout-image"
                 />
                 <div className="image-overlay">
                   <div className="overlay-stat">$3.5B Market</div>
                   <div className="overlay-badge">CAGR 14.5%</div>
                 </div>
               </div>
+              <div className="image-container nurse-container">
+                <img 
+                  src={MarketNurse}
+                  alt="Healthcare Professional" 
+                  className="market-image nurse-image"
+                />
+                <div className="image-label">Sports & Fitness</div>
+              </div>
             </div>
+          </div>
 
-            <div className="customers-list">
-              <div className="images-grid">
-                <div className="image-container workout-container">
-                  <img 
-                    src={MarketNurse}
-                    alt="Workout Training" 
-                    className="market-image workout-image"
-                  />
-                  <div className="image-label">Sports & Fitness</div>
-                </div>
-                <div className="image-container phone-container">
-                  <img 
-                    src={MarketPhone}
-                    alt="Mobile Technology" 
-                    className="market-image phone-image"
-                  />
-                  <div className="image-label">Smart Monitoring</div>
-                </div>
+          <div className="market-right animate-on-scroll">
+            <div className="phone-full-container">
+              <div className="image-container phone-main-container">
+                <img 
+                  src={MarketPhone}
+                  alt="Mobile Technology" 
+                  className="market-image phone-image"
+                />
+                {/* <div className="image-label">Smart Monitoring</div> */}
               </div>
             </div>
           </div>

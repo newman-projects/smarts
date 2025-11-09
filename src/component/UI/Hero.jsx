@@ -68,7 +68,8 @@ export default function Hero() {
             <div className="title" ref={titleRef}>
               <h1>Monitoring and Diagnosis by MuscleSen</h1>
               <h4>info@smartsen.net</h4>
-              <h2>Imaging Knowing your muscle development in real-time…  <br />monitoring & diagnosis by MuscleSen</h2>
+              <h2>Imaging Knowing your muscle development in real-time…</h2>
+              <h2 style={{marginLeft: '50px'}}>...monitoring & diagnosis by MuscleSen</h2>
             </div>
             <div className="info" ref={infoRef}>
               <p>

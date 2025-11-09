@@ -34,10 +34,10 @@
 
 /* Solution subtitle styling */
 .solution-subtitle {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #666;
-  margin-bottom: 1.5rem;
-  line-height: 1.5;
+  margin-bottom: 1rem;
+  line-height: 1;
   max-width: 100%;
   opacity: 0;
   transform: translateY(-20px);
@@ -55,7 +55,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 8rem;
+  gap: 6rem;
   max-width: 1600px;
   margin: 0 auto;
   width: 100%;
@@ -72,7 +72,7 @@
 }
 
 .solution-text-item {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   line-height: 1.8;
   color: #333;
   margin: 0;
@@ -80,7 +80,7 @@
 
 .solution-text-handwriting {
   font-family: var(--handwriting-font, 'Brush Script MT', cursive);
-  font-size: 2rem;
+  font-size: 1.7rem;
   color: #e81cff;
   font-style: italic;
 }

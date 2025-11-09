@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import quantum from '../../assets/quantum.svg';
 import Diagnostics from '../../assets/Diagnostics.svg';
 import magnetically from '../../assets/magnetically.svg';
+import diagnosis from '../../assets/diagnosis.svg'
 import logo from '../../assets/chip-logo.png';
 import '../styles/solution.css';
 
@@ -17,7 +18,7 @@ export default function SolutionV1() {
       id: 1,
       image: quantum,
       title: "Quantum gradiometer sensor",
-      description: "Precisely detects tiny variations in the magnetic field. Monitoring weak neuromuscular currents."
+      description: "Precisely detects tiny variations in the magnetic field. Monitoring weak neuromuscular currents"
     },
     {
       id: 2,
@@ -29,8 +30,15 @@ export default function SolutionV1() {
       id: 3,
       image: magnetically,
       title: "Magnetically Shielded environment",
-      description: "No shielded chamber required. Uses built-in adaptive shielding."
-    }
+      description: "No shielded chamber required. Uses built-in adaptive shielding"
+    },
+    { 
+      id: 4, 
+      image: diagnosis, 
+      title: "Unique Diagnosis",
+      description: 'Small and inner muscles, muscle engagement and neuromuscular junction', 
+    },
+    
   ];
 
   useEffect(() => {
